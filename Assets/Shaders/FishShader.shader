@@ -14,7 +14,7 @@
 		float4 _FearCol;
 
 		struct Input {
-			float2 uv_MainTex;
+			half noting;
 		};
 
 		void surf (Input IN, inout SurfaceOutput o) {

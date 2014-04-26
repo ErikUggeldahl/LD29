@@ -8,11 +8,6 @@ public class CameraControl : MonoBehaviour
 
     float followSpeed = 6f;
 
-    void Start()
-    {
-	
-    }
-
     void Update()
     {
         var camPos = camera.WorldToViewportPoint(transform.position);
