@@ -38,10 +38,6 @@ public class UpgradeSet : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-    }
-
     public void AddPoints(int points)
     {
         pointTotal += points;
