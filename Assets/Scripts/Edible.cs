@@ -5,20 +5,18 @@ public class Edible : MonoBehaviour
 {
     [SerializeField]
     LineRenderer line;
-
     [SerializeField]
     Transform toMove;
 
+    [SerializeField]
+    int value = 1;
+
     float attractSpeed = 4f;
+    float consumeDistance = 0.5f;
 
     void Start()
     {
         line.enabled = false;
-    }
-	
-    void Update()
-    {
-	
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,8 +36,8 @@ public class Edible : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, other.transform.position);
 
-        if (distance < 0.5f)
-            Consume();
+        if (distance < consumeDistance)
+            Consume(other.gameObject.GetComponent<UpgradeSet>());
         else
             Attract(distance, other.transform.position);
         
@@ -51,8 +49,10 @@ public class Edible : MonoBehaviour
         line.SetPosition(1, end);
     }
 
-    void Consume()
+    void Consume(UpgradeSet upgrade)
     {
+        upgrade.AddPoints(value);
+
         Destroy(toMove.gameObject);
     }
 
@@ -63,4 +63,3 @@ public class Edible : MonoBehaviour
 
     }
 }
-
