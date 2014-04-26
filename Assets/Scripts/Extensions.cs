@@ -1,19 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Extensions : MonoBehaviour
+public static class Extensions
 {
-
-    // Use this for initialization
-    void Start()
+    public static Vector3 ZMask(this Vector3 vec)
     {
-	
-    }
-	
-    // Update is called once per frame
-    void Update()
-    {
-	
+        return new Vector3(vec.x, vec.y, 0f);
     }
 }
-

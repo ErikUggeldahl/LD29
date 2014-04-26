@@ -3,8 +3,6 @@ using System.Collections;
 
 public class CreatureControl : MonoBehaviour
 {
-    Vector3 zMask = new Vector3(1f, 1f, 0f);
-
     Camera mainCam;
 
     float moveSpeed = 60f;
@@ -16,7 +14,7 @@ public class CreatureControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 mousePos = Vector3.Scale(mainCam.ScreenToWorldPoint(Input.mousePosition), zMask);
+        Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition).ZMask();
 
         if (Input.GetKey(KeyCode.W))
         {
