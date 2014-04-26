@@ -9,7 +9,7 @@ public class FishSwarm : MonoBehaviour
     const float WANDER_SPEED = 0.2f;
     const float PULL_DISTANCE = 4f;
 
-    const float FEAR_DISTANCE = 8f;
+    const float FEAR_DISTANCE = 4f;
     const float FEAR_ANGLE = 110f;
     const float FEAR_SPEED = 6f;
     const float FEAR_STOP_CHANCE = 0.01f;

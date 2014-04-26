@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CreatureControl : MonoBehaviour
 {
+    [SerializeField]
+    GameObject teleportEffectObj;
+
     Camera mainCam;
 
     float moveSpeed = 60f;
@@ -28,10 +31,10 @@ public class CreatureControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position = (Vector2)mousePos;
+            var teleportEffect = ((GameObject)Instantiate(teleportEffectObj, transform.position, Quaternion.identity)).GetComponent<TeleportEffect>();
+            teleportEffect.Play();
 
-            if (!particleSystem.isPlaying)
-                particleSystem.Play();
+            transform.position = (Vector2)mousePos;
         }
 
         //Vector2 view = mainCam.ScreenToViewportPoint(Input.mousePosition);

@@ -18,8 +18,8 @@
 		};
 
 		void surf (Input IN, inout SurfaceOutput o) {
-			o.Albedo = _FearCol;
-			o.Alpha = _FearCol;
+			o.Albedo = _MainCol;
+			o.Alpha = _MainCol;
 			o.Emission = _FearCol * sin(_Time.z);
 		}
 		ENDCG
