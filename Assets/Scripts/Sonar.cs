@@ -9,6 +9,9 @@ public class Sonar : MonoBehaviour
     [SerializeField]
     Transform sonarRing;
 
+    [SerializeField]
+    CreatureControl control;
+
     Camera mainCam;
 
     bool isPinging = false;
@@ -26,7 +29,7 @@ public class Sonar : MonoBehaviour
 	
     void Update()
     {
-        if (Input.GetKeyDown(pingKey))
+        if (control.CanSonar && Input.GetKeyDown(pingKey))
             StartPing();
     }
 

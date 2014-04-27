@@ -9,17 +9,28 @@ public class CreatureControl : MonoBehaviour
     [SerializeField]
     GameObject teleportEffectObj;
 
+    [SerializeField]
+    Light creatureLight;
+
     Camera mainCam;
     CameraControl cameraControl;
 
     float defaultDrag;
-    float startMoveSpeed = START_MOVE_SPEED;
     float moveSpeed = START_MOVE_SPEED;
 
     KeyCode moveKey = KeyCode.W;
     KeyCode teleportKey = KeyCode.Space;
 
     bool isBelowWater = true;
+    bool canTeleport = false;
+    bool canSonar = false;
+    public bool CanSonar
+    {
+        get { return canSonar; }
+    }
+
+    float teleportTotalCooldown = 3f;
+    float teleportCooldown = 0f;
 
     void Start()
     {
@@ -79,12 +90,17 @@ public class CreatureControl : MonoBehaviour
 
     void Teleport(Vector3 to)
     {
-        if (Input.GetKeyDown(teleportKey))
+        if (teleportCooldown > 0f)
+            teleportCooldown -= Time.deltaTime;
+
+        if (canTeleport && Input.GetKeyDown(teleportKey))
         {
             var teleportEffect = ((GameObject)Instantiate(teleportEffectObj, transform.position, Quaternion.identity)).GetComponent<TeleportEffect>();
             teleportEffect.Play();
             
             transform.position = to;
+
+            teleportCooldown = teleportTotalCooldown;
         }
     }
 
@@ -93,8 +109,24 @@ public class CreatureControl : MonoBehaviour
         cameraControl.IncreaseZoom();
     }
 
+    public void IncreaseLight()
+    {
+        creatureLight.range += 30f;
+        creatureLight.intensity += 2f;
+    }
+
     public void IncreaseMoveSpeed()
     {
         moveSpeed += MOVE_SPEED_INC;
+    }
+
+    public void EnableTeleport()
+    {
+        canTeleport = true;
+    }
+
+    public void EnableSonar()
+    {
+        canSonar = true;
     }
 }

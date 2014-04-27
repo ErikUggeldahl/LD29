@@ -20,12 +20,12 @@
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			float dist = distance(_SonarOrigin, IN.worldPos);
-			float proximity = abs(dist - _SonarDistance) - 0.5;
+			float proximity = abs(dist - _SonarDistance) + 0.5;
 			float percentComplete = 1 - _SonarDistance / _SonarMaxDistance;
 			
 			o.Albedo = half3(0,0,0);
 			o.Alpha = 0;
-			o.Emission = saturate((0.1 / pow(proximity, 10))) * percentComplete;
+			o.Emission = saturate((1 / pow(proximity, 5))) * percentComplete;
 		}
 		ENDCG
 	}
