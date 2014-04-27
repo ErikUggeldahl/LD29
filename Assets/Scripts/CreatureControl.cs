@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CreatureControl : MonoBehaviour
 {
+    const float START_MOVE_SPEED = 60f;
+    const float MOVE_SPEED_INC = 20f;
+
     [SerializeField]
     GameObject teleportEffectObj;
 
@@ -10,7 +13,8 @@ public class CreatureControl : MonoBehaviour
     CameraControl cameraControl;
 
     float defaultDrag;
-    float moveSpeed = 60f;
+    float startMoveSpeed = START_MOVE_SPEED;
+    float moveSpeed = START_MOVE_SPEED;
 
     KeyCode moveKey = KeyCode.W;
     KeyCode teleportKey = KeyCode.Space;
@@ -82,5 +86,15 @@ public class CreatureControl : MonoBehaviour
             
             transform.position = to;
         }
+    }
+
+    public void IncreaseSightRadius()
+    {
+        cameraControl.IncreaseZoom();
+    }
+
+    public void IncreaseMoveSpeed()
+    {
+        moveSpeed += MOVE_SPEED_INC;
     }
 }

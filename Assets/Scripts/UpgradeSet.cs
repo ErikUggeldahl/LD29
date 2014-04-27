@@ -4,6 +4,10 @@ using System.Collections;
 public class UpgradeSet : MonoBehaviour
 {
     const int BAUBLE_COUNT = 8;
+    const int POINTS_TO_LEVEL = 9;
+
+    [SerializeField]
+    CreatureControl creature;
 
     [SerializeField]
     Transform baubleRotator;
@@ -41,10 +45,18 @@ public class UpgradeSet : MonoBehaviour
     public void AddPoints(int points)
     {
         pointTotal += points;
+        if (pointTotal % POINTS_TO_LEVEL == 0)
+            LevelUp();
 
         baubleCount += points;
         baubleCount %= (BAUBLE_COUNT + 1);
         EnableBaubles();
+    }
+
+    void LevelUp()
+    {
+        creature.IncreaseSightRadius();
+        creature.IncreaseMoveSpeed();
     }
 
     void EnableBaubles()

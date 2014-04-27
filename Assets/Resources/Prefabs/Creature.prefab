@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ede973edb5af4e40ab47aa239d15ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creature: {fileID: 11400000}
   baubleRotator: {fileID: 400004}
   baubleObj: {fileID: 100002, guid: a0ce84f21def3b8428be3e947c60696f, type: 2}
 --- !u!114 &11400004
