@@ -40,7 +40,7 @@ public class Sonar : MonoBehaviour
 
     IEnumerator SonarPing()
     {
-        mainCam.SetReplacementShader(sonarShader, "");
+        mainCam.SetReplacementShader(sonarShader, "RenderType");
         float originalOrtho = mainCam.orthographicSize;
 
         Vector3 pos = transform.position;
