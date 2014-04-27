@@ -17,6 +17,8 @@ public class Sonar : MonoBehaviour
     float maxSpeed = 20f;
     float accel = 3f;
 
+    KeyCode pingKey = KeyCode.F;
+
     void Start()
     {
         mainCam = Camera.main;
@@ -24,7 +26,7 @@ public class Sonar : MonoBehaviour
 	
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(pingKey))
             StartPing();
     }
 
@@ -53,6 +55,9 @@ public class Sonar : MonoBehaviour
 
         while (distance < maxDistance)
         {
+            if (Input.GetKeyUp(pingKey))
+                break;
+
             if (speed < maxSpeed)
                 speed += accel * Time.deltaTime;
 

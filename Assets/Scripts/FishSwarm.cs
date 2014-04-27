@@ -80,6 +80,8 @@ public class FishSwarm : MonoBehaviour
             else
                 Wander();
         }
+
+        LimitY();
     }
 
     void Wander()
@@ -108,5 +110,15 @@ public class FishSwarm : MonoBehaviour
         isScattering = true;
         if (Random.value < FEAR_STOP_CHANCE)
             isScattering = false;
+    }
+
+    void LimitY()
+    {
+        if (transform.position.y > 0)
+        {
+            var pos = transform.position;
+            pos.y = 0;
+            transform.position = pos;
+        }
     }
 }

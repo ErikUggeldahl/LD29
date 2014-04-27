@@ -11,6 +11,9 @@ public class CreatureControl : MonoBehaviour
     float defaultDrag;
     float moveSpeed = 60f;
 
+    KeyCode moveKey = KeyCode.W;
+    KeyCode teleportKey = KeyCode.Space;
+
     void Start()
     {
         mainCam = Camera.main;
@@ -44,7 +47,7 @@ public class CreatureControl : MonoBehaviour
 
     void Move(Vector3 to)
     {
-        if (Input.GetKey(KeyCode.W) && transform.position.y <= 0f)
+        if (Input.GetKey(moveKey) && transform.position.y <= 0f)
         {
             Vector2 toMouse = (to - transform.position).normalized;
             
@@ -57,7 +60,7 @@ public class CreatureControl : MonoBehaviour
 
     void Teleport(Vector3 to)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(teleportKey))
         {
             var teleportEffect = ((GameObject)Instantiate(teleportEffectObj, transform.position, Quaternion.identity)).GetComponent<TeleportEffect>();
             teleportEffect.Play();
