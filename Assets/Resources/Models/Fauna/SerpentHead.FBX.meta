@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 2033ffc6a16ab0341ad8e20071d1001a
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: BLowerJaw
+    100002: BRoot
+    100004: BUpperJaw
+    100006: Eyes
+    100008: Head
+    100010: //RootNode
+    100012: Tooth001
+    100014: Tooth002
+    100016: Tooth003
+    100018: Tooth004
+    100020: Tooth005
+    100022: Tooth006
+    100024: Tooth007
+    100026: Tooth008
+    100028: Tooth009
+    100030: Tooth010
+    100032: Tooth011
+    100034: Tooth012
+    100036: Tooth013
+    100038: Tooth014
+    100040: Tooth015
+    100042: Tooth016
+    100044: Tooth017
+    100046: Tooth018
+    100048: Tooth019
+    100050: Tooth020
+    100052: Tooth021
+    100054: Tooth022
+    100056: Tooth023
+    100058: Tooth024
+    100060: Tooth025
+    100062: Tooth026
+    100064: Tooth027
+    100066: Tooth028
+    100068: Tooth029
+    100070: Tooth030
+    100072: Tooth031
+    100074: SnakeHeadRoot
+    400000: BLowerJaw
+    400002: BRoot
+    400004: BUpperJaw
+    400006: Eyes
+    400008: Head
+    400010: //RootNode
+    400012: Tooth001
+    400014: Tooth002
+    400016: Tooth003
+    400018: Tooth004
+    400020: Tooth005
+    400022: Tooth006
+    400024: Tooth007
+    400026: Tooth008
+    400028: Tooth009
+    400030: Tooth010
+    400032: Tooth011
+    400034: Tooth012
+    400036: Tooth013
+    400038: Tooth014
+    400040: Tooth015
+    400042: Tooth016
+    400044: Tooth017
+    400046: Tooth018
+    400048: Tooth019
+    400050: Tooth020
+    400052: Tooth021
+    400054: Tooth022
+    400056: Tooth023
+    400058: Tooth024
+    400060: Tooth025
+    400062: Tooth026
+    400064: Tooth027
+    400066: Tooth028
+    400068: Tooth029
+    400070: Tooth030
+    400072: Tooth031
+    400074: SnakeHeadRoot
+    2300000: Eyes
+    2300002: Tooth001
+    2300004: Tooth002
+    2300006: Tooth003
+    2300008: Tooth004
+    2300010: Tooth005
+    2300012: Tooth006
+    2300014: Tooth007
+    2300016: Tooth008
+    2300018: Tooth009
+    2300020: Tooth010
+    2300022: Tooth011
+    2300024: Tooth012
+    2300026: Tooth013
+    2300028: Tooth014
+    2300030: Tooth015
+    2300032: Tooth016
+    2300034: Tooth017
+    2300036: Tooth018
+    2300038: Tooth019
+    2300040: Tooth020
+    2300042: Tooth021
+    2300044: Tooth022
+    2300046: Tooth023
+    2300048: Tooth024
+    2300050: Tooth025
+    2300052: Tooth026
+    2300054: Tooth027
+    2300056: Tooth028
+    2300058: Tooth029
+    2300060: Tooth030
+    2300062: Tooth031
+    3300000: Eyes
+    3300002: Tooth001
+    3300004: Tooth002
+    3300006: Tooth003
+    3300008: Tooth004
+    3300010: Tooth005
+    3300012: Tooth006
+    3300014: Tooth007
+    3300016: Tooth008
+    3300018: Tooth009
+    3300020: Tooth010
+    3300022: Tooth011
+    3300024: Tooth012
+    3300026: Tooth013
+    3300028: Tooth014
+    3300030: Tooth015
+    3300032: Tooth016
+    3300034: Tooth017
+    3300036: Tooth018
+    3300038: Tooth019
+    3300040: Tooth020
+    3300042: Tooth021
+    3300044: Tooth022
+    3300046: Tooth023
+    3300048: Tooth024
+    3300050: Tooth025
+    3300052: Tooth026
+    3300054: Tooth027
+    3300056: Tooth028
+    3300058: Tooth029
+    3300060: Tooth030
+    3300062: Tooth031
+    4300000: Head
+    4300002: Tooth003
+    4300004: Tooth010
+    4300006: Tooth009
+    4300008: Tooth004
+    4300010: Tooth001
+    4300012: Tooth015
+    4300014: Tooth014
+    4300016: Tooth013
+    4300018: Tooth008
+    4300020: Tooth007
+    4300022: Tooth002
+    4300024: Tooth005
+    4300026: Tooth012
+    4300028: Tooth011
+    4300030: Tooth006
+    4300032: Tooth020
+    4300034: Tooth025
+    4300036: Tooth019
+    4300038: Tooth018
+    4300040: Tooth024
+    4300042: Tooth031
+    4300044: Tooth030
+    4300046: Tooth029
+    4300048: Tooth028
+    4300050: Tooth023
+    4300052: Tooth022
+    4300054: Tooth017
+    4300056: Tooth016
+    4300058: Tooth027
+    4300060: Tooth021
+    4300062: Tooth026
+    4300064: Eyes
+    7400000: Serpent_Idle
+    7400002: Serpent_OpenJaw
+    7400004: Serpent_CloseJaw
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Head
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Serpent_Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: .100000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BRoot
+        weight: 1
+      - path: BRoot/BLowerJaw
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth001
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth002
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth003
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth004
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth005
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth006
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth007
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth008
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth009
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth010
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth011
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth012
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth013
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth014
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth015
+        weight: 1
+      - path: BRoot/BUpperJaw
+        weight: 1
+      - path: BRoot/BUpperJaw/Eyes
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth016
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth017
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth018
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth019
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth020
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth021
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth022
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth023
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth024
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth025
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth026
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth027
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth028
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth029
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth030
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth031
+        weight: 1
+      - path: Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Serpent_OpenJaw
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BRoot
+        weight: 1
+      - path: BRoot/BLowerJaw
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth001
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth002
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth003
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth004
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth005
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth006
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth007
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth008
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth009
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth010
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth011
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth012
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth013
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth014
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth015
+        weight: 1
+      - path: BRoot/BUpperJaw
+        weight: 1
+      - path: BRoot/BUpperJaw/Eyes
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth016
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth017
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth018
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth019
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth020
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth021
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth022
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth023
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth024
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth025
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth026
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth027
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth028
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth029
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth030
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth031
+        weight: 1
+      - path: Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Serpent_CloseJaw
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BRoot
+        weight: 1
+      - path: BRoot/BLowerJaw
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth001
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth002
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth003
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth004
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth005
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth006
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth007
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth008
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth009
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth010
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth011
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth012
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth013
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth014
+        weight: 1
+      - path: BRoot/BLowerJaw/Tooth015
+        weight: 1
+      - path: BRoot/BUpperJaw
+        weight: 1
+      - path: BRoot/BUpperJaw/Eyes
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth016
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth017
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth018
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth019
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth020
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth021
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth022
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth023
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth024
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth025
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth026
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth027
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth028
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth029
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth030
+        weight: 1
+      - path: BRoot/BUpperJaw/Tooth031
+        weight: 1
+      - path: Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

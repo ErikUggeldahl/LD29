@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     Transform toFollow;
 
-    float followSpeed = 6f;
+    float followSpeed = 20f;
 
     void Update()
     {
