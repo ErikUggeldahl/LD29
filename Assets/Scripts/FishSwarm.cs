@@ -5,6 +5,7 @@ public class FishSwarm : MonoBehaviour
 {
     const int SPAWN_PER_GEN = 3;
     const int SPAWN_GENS = 3;
+    const float SPAWN_RADIUS = 5f;
 
     const float WANDER_SPEED = 0.2f;
     const float PULL_DISTANCE = 4f;
@@ -26,6 +27,7 @@ public class FishSwarm : MonoBehaviour
 
     Quaternion wanderRotation;
     bool isScattering;
+    float scale;
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class FishSwarm : MonoBehaviour
 
         transform.rotation = Random.rotation;
         wanderRotation = Random.rotation;
+        scale = transform.localScale.x;
     }
     
     void Init(int spawnGeneration, Transform leader, Transform toAvoid)
@@ -52,7 +55,9 @@ public class FishSwarm : MonoBehaviour
     {
         for (int i = 0; i < SPAWN_PER_GEN; i++)
         {
-            FishSwarm swarm = (Instantiate(gameObject) as GameObject).GetComponent<FishSwarm>();
+            var spawnLocation = transform.position + Random.insideUnitSphere.ZMask() * SPAWN_RADIUS * scale;
+            FishSwarm swarm = (Instantiate(gameObject, spawnLocation, transform.rotation) as GameObject).GetComponent<FishSwarm>();
+            swarm.transform.position = spawnLocation;
             swarm.Init(spawnGeneration + 1, transform, toAvoid);
         }
     }
@@ -75,7 +80,7 @@ public class FishSwarm : MonoBehaviour
         else
         {
             float leaderDistance = Vector3.Distance(transform.position, leader.position);
-            if (leaderDistance > PULL_DISTANCE)
+            if (leaderDistance > PULL_DISTANCE * scale)
                 FollowLeader(leaderDistance);
             else
                 Wander();
@@ -86,7 +91,7 @@ public class FishSwarm : MonoBehaviour
 
     void Wander()
     {
-        transform.Translate(transform.forward.ZMask() * WANDER_SPEED * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward.ZMask() * WANDER_SPEED * scale * Time.deltaTime, Space.World);
 
         if (Random.value < NEW_DIRECTION_CHANCE)
             wanderRotation = Random.rotation;
@@ -98,14 +103,14 @@ public class FishSwarm : MonoBehaviour
     void FollowLeader(float leaderDistance)
     {
         transform.LookAt(leader);
-        transform.Translate(transform.forward.ZMask() * WANDER_SPEED * leaderDistance * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward.ZMask() * WANDER_SPEED * scale * leaderDistance * Time.deltaTime, Space.World);
     }
 
     void Scatter()
     {
         Vector3 awayDir = transform.position - toAvoid.position;
         transform.LookAt(transform.position + awayDir);
-        transform.Translate(transform.forward.ZMask() * FEAR_SPEED * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward.ZMask() * FEAR_SPEED * scale * Time.deltaTime, Space.World);
 
         isScattering = true;
         if (Random.value < FEAR_STOP_CHANCE)
