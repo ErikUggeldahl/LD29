@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 8
   m_Name: Creature
   m_TagString: Untagged
@@ -284,6 +285,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonarShader: {fileID: 4800000, guid: cbe1d04ab24117248848df72ebe2f4a4, type: 3}
   sonarRing: {fileID: 400006}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2bb66262d86f34e95b6a904d4849ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullAmbient: {r: .690196097, g: .690196097, b: .690196097, a: 1}
+  zeroAmbient: {r: 0, g: 0, b: 0, a: 0}
+  yMax: 0
+  yMin: -470
+  t: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
