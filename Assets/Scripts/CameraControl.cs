@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     Transform toFollow;
 
-    float followSpeed = 20f;
+    float followSpeed = 80f;
 
     void Update()
     {
@@ -14,7 +14,7 @@ public class CameraControl : MonoBehaviour
         var toFollowPos = camera.WorldToViewportPoint(toFollow.position).ZMask();
         var distance = Vector3.Distance(camPos, toFollowPos);
 
-        if (distance > 0.2)
+        if (distance > 0.1)
         {
             var followMove = Vector3.MoveTowards(transform.position, toFollow.position, followSpeed * (1 + distance) * Time.deltaTime);
             followMove.z = transform.position.z;
