@@ -7,6 +7,7 @@ public class CreatureControl : MonoBehaviour
     GameObject teleportEffectObj;
 
     Camera mainCam;
+    CameraControl cameraControl;
 
     float defaultDrag;
     float moveSpeed = 60f;
@@ -14,10 +15,20 @@ public class CreatureControl : MonoBehaviour
     KeyCode moveKey = KeyCode.W;
     KeyCode teleportKey = KeyCode.Space;
 
+    bool isBelowWater = true;
+
     void Start()
     {
         mainCam = Camera.main;
+        cameraControl = mainCam.GetComponent<CameraControl>();
         defaultDrag = rigidbody2D.drag;
+
+        AddStartRotation();
+    }
+
+    void AddStartRotation()
+    {
+        rigidbody2D.AddTorque(10000f);
     }
 
     void FixedUpdate()
@@ -33,15 +44,19 @@ public class CreatureControl : MonoBehaviour
 
     void BuoyancyControl()
     {
-        if (transform.position.y > 0f)
+        if (transform.position.y > 0f && isBelowWater)
         {
+            isBelowWater = false;
             rigidbody2D.gravityScale = 1f;
             rigidbody2D.drag = 0f;
+            cameraControl.IsLocked(true);
         }
-        else
+        else if (transform.position.y <= 0f && !isBelowWater)
         {
+            isBelowWater = true;
             rigidbody2D.gravityScale = 0f;
             rigidbody2D.drag = defaultDrag;
+            cameraControl.IsLocked(false);
         }
     }
 
