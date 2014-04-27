@@ -6,12 +6,12 @@ public class TerrainEdgeCollider : MonoBehaviour
     [SerializeField]
     int vertexCount;
 
-    EdgeCollider2D collider;
+    EdgeCollider2D edgeCollider;
     Mesh mesh;
 
     void Start()
     {
-        collider = GetComponent<EdgeCollider2D>();
+        edgeCollider = GetComponent<EdgeCollider2D>();
         mesh = GetComponent<MeshFilter>().mesh;
 
         SetupVerts();
@@ -26,6 +26,6 @@ public class TerrainEdgeCollider : MonoBehaviour
 
         points[vertexCount] = mesh.vertices[0];
 
-        collider.points = points;
+        edgeCollider.points = points;
     }
 }
