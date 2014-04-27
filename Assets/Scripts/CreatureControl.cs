@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CreatureControl : MonoBehaviour
 {
-    const float START_MOVE_SPEED = 60f;
-    const float MOVE_SPEED_INC = 20f;
+    const float START_MOVE_SPEED = 80f;
+    const float MOVE_SPEED_INC = 30f;
 
     [SerializeField]
     GameObject teleportEffectObj;

@@ -4,7 +4,7 @@ using System.Collections;
 public class UpgradeSet : MonoBehaviour
 {
     const int BAUBLE_COUNT = 8;
-    const int POINTS_TO_LEVEL = 9;
+    const int POINTS_TO_LEVEL = 20;
 
     [SerializeField]
     CreatureControl creature;

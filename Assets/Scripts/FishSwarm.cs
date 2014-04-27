@@ -11,14 +11,18 @@ public class FishSwarm : MonoBehaviour
     const float PULL_DISTANCE = 4f;
 
     const float FEAR_DISTANCE = 4f;
-    const float FEAR_ANGLE = 110f;
+    const float FEAR_ANGLE = 200f;
     const float FEAR_SPEED = 6f;
+    const float ATTRACT_SPEED = 2f;
     const float FEAR_STOP_CHANCE = 0.01f;
 
     const float NEW_DIRECTION_CHANCE = 0.01f;
 
     [SerializeField]
     Transform toAvoid;
+
+    [SerializeField]
+    Edible edible;
 
     int spawnGeneration = 0;
     bool isLeader;
@@ -65,25 +69,26 @@ public class FishSwarm : MonoBehaviour
     void Update()
     {
         float toAvoidDist = Vector3.Distance(transform.position, toAvoid.position);
-        float toAvoidAngle = Vector3.Angle(toAvoid.forward, transform.position - toAvoid.position);
+        float toAvoidAngle = Vector3.Angle(toAvoid.forward, toAvoid.position - transform.position);
 
         if (isScattering || toAvoidDist < FEAR_DISTANCE && toAvoidAngle < FEAR_ANGLE)
             Scatter();
 
         else if (isLeader)
-        {
-            if (toAvoidDist < FEAR_DISTANCE && toAvoidAngle < FEAR_ANGLE)
-                Scatter();
-            else
-                Wander();
-        }                                                                              
+            Wander();
+
         else
         {
-            float leaderDistance = Vector3.Distance(transform.position, leader.position);
-            if (leaderDistance > PULL_DISTANCE * scale)
-                FollowLeader(leaderDistance);
-            else
+            if (leader == null)
                 Wander();
+            else
+            {
+                float leaderDistance = Vector3.Distance(transform.position, leader.position);
+                if (leaderDistance > PULL_DISTANCE * scale)
+                    FollowLeader(leaderDistance);
+                else
+                    Wander();
+            }
         }
 
         LimitY();
@@ -108,9 +113,11 @@ public class FishSwarm : MonoBehaviour
 
     void Scatter()
     {
+        float speed = edible.IsAttracted ? FEAR_SPEED : ATTRACT_SPEED;
+
         Vector3 awayDir = transform.position - toAvoid.position;
         transform.LookAt(transform.position + awayDir);
-        transform.Translate(transform.forward.ZMask() * FEAR_SPEED * scale * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward.ZMask() * speed * scale * Time.deltaTime, Space.World);
 
         isScattering = true;
         if (Random.value < FEAR_STOP_CHANCE)

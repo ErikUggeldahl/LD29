@@ -11,8 +11,16 @@ public class Edible : MonoBehaviour
     [SerializeField]
     int value = 1;
 
-    float attractSpeed = 4f;
+    float attractSpeed = 7f;
     float consumeDistance = 0.5f;
+
+    bool isAttracted = false;
+    public bool IsAttracted
+    {
+        get { return isAttracted; }
+    }
+
+    bool isConsumed = false;
 
     void Start()
     {
@@ -23,11 +31,13 @@ public class Edible : MonoBehaviour
     {
         AdjustLinePosition(other.transform.position);
         line.enabled = true;
+        isAttracted = true;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         line.enabled = false;
+        isAttracted = false;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -51,15 +61,20 @@ public class Edible : MonoBehaviour
 
     void Consume(UpgradeSet upgrade)
     {
+        isConsumed = true;
+
         upgrade.AddPoints(value);
 
+        Destroy(this);
         Destroy(toMove.gameObject);
     }
 
     void Attract(float distance, Vector3 to)
     {
+        if (isConsumed)
+            return;
+
         float attraction = attractSpeed * (1f / distance) * Time.deltaTime;
         toMove.position = Vector3.MoveTowards(toMove.position, to, attraction);
-
     }
 }

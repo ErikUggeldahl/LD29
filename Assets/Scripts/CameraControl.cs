@@ -10,6 +10,13 @@ public class CameraControl : MonoBehaviour
 
     bool locked = true;
 
+    float newZoom;
+
+    void Start()
+    {
+        newZoom = camera.orthographicSize;
+    }
+
     void Update()
     {
         if (locked)
@@ -52,12 +59,13 @@ public class CameraControl : MonoBehaviour
 
     public void IncreaseZoom()
     {
+        StopAllCoroutines();
         StartCoroutine(ZoomOut());
     }
 
     IEnumerator ZoomOut()
     {
-        float newZoom = camera.orthographicSize + 5f;
+        newZoom += 5f;
 
         while (camera.orthographicSize < newZoom)
         {
