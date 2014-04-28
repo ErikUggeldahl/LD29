@@ -249,6 +249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportEffectObj: {fileID: 100000, guid: f3acf3b2c755aa440b647b8c2a84eba6, type: 2}
+  creatureLight: {fileID: 10800000}
+  teleportText: {fileID: 0}
+  sonarText: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +266,19 @@ MonoBehaviour:
   creature: {fileID: 11400000}
   baubleRotator: {fileID: 400004}
   baubleObj: {fileID: 100002, guid: a0ce84f21def3b8428be3e947c60696f, type: 2}
+  levelUpText: {fileID: 0}
+  sightUpText: {fileID: 0}
+  moveUpText: {fileID: 0}
+  upgradeMeshes:
+  - {fileID: 4300000, guid: 517615b12be3d0e4cb695220298220f6, type: 3}
+  - {fileID: 4300000, guid: 9abf988ad5ec2b44195020269e7a7f71, type: 3}
+  - {fileID: 4300000, guid: 9ffc929b35fe471458068eb0cff816d7, type: 3}
+  - {fileID: 4300000, guid: f0d374db2fd63dc40be5ab5af0d28575, type: 3}
+  - {fileID: 4300000, guid: 9c3889373053a1544a42cf89fc77271e, type: 3}
+  - {fileID: 4300000, guid: 3c1b4ff7b93b5214989e95ba6ae27f88, type: 3}
+  - {fileID: 4300000, guid: 6736ca561b92c8749ab440c11fd7726f, type: 3}
+  - {fileID: 4300000, guid: 503aa7a5525090046aa1b8f68e522f59, type: 3}
+  filter: {fileID: 3300000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonarShader: {fileID: 4800000, guid: cbe1d04ab24117248848df72ebe2f4a4, type: 3}
   sonarRing: {fileID: 400006}
+  control: {fileID: 11400000}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,7 +319,6 @@ MonoBehaviour:
   zeroAmbient: {r: 0, g: 0, b: 0, a: 0}
   yMax: 0
   yMin: -470
-  t: 0
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
