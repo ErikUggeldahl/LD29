@@ -10,6 +10,9 @@ public class Sonar : MonoBehaviour
     Transform sonarRing;
 
     [SerializeField]
+    AudioClip sonarSound;
+
+    [SerializeField]
     CreatureControl control;
 
     Camera mainCam;
@@ -51,6 +54,9 @@ public class Sonar : MonoBehaviour
         Shader.SetGlobalFloat("_SonarMaxDistance", maxDistance);
 
         sonarRing.gameObject.SetActive(true);
+
+        audio.clip = sonarSound;
+        audio.Play();
 
         isPinging = true;
         float distance = 0;

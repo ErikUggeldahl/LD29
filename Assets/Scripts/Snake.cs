@@ -21,6 +21,11 @@ public class Snake : MonoBehaviour
     [SerializeField]
     AnimationClip attackAnimation;
 
+    [SerializeField]
+    AudioClip wanderSound;
+    [SerializeField]
+    AudioClip attackSound;
+
     Transform toAttack;
 
     bool attacking = false;
@@ -50,6 +55,12 @@ public class Snake : MonoBehaviour
     
     void Attack(float dist)
     {
+        if (attacking = false)
+        {
+            audio.clip = wanderSound;
+            audio.Play();
+        }
+
         attacking = true;
 
         if (dist > 0.4f)
@@ -85,5 +96,8 @@ public class Snake : MonoBehaviour
     {
         snakeAnimation.Play("Snake_Attack");
         snakeAnimation.PlayQueued("Snake_Move");
+
+        audio.clip = attackSound;
+        audio.Play();
     }
 }

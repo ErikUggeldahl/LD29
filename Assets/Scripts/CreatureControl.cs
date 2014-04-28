@@ -17,6 +17,9 @@ public class CreatureControl : MonoBehaviour
     [SerializeField]
     TextMesh sonarText;
 
+    [SerializeField]
+    AudioClip teleportSound;
+
     Camera mainCam;
     CameraControl cameraControl;
 
@@ -106,6 +109,9 @@ public class CreatureControl : MonoBehaviour
             transform.position = to;
 
             teleportCooldown = teleportTotalCooldown;
+
+            audio.clip = teleportSound;
+            audio.Play();
         }
     }
 

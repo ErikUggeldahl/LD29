@@ -15,6 +15,7 @@ public class FishSwarm : MonoBehaviour
     const float FEAR_SPEED = 6f;
     const float ATTRACT_SPEED = 2f;
     const float FEAR_STOP_CHANCE = 0.01f;
+    const float FEAR_SOUND_CHANCE = 0.01f;
 
     const float NEW_DIRECTION_CHANCE = 0.01f;
 
@@ -23,6 +24,9 @@ public class FishSwarm : MonoBehaviour
 
     [SerializeField]
     Edible edible;
+
+    [SerializeField]
+    AudioClip[] sounds;
 
     int spawnGeneration = 0;
     bool isLeader;
@@ -119,9 +123,21 @@ public class FishSwarm : MonoBehaviour
         transform.LookAt(transform.position + awayDir);
         transform.Translate(transform.forward.ZMask() * speed * scale * Time.deltaTime, Space.World);
 
+        PlayScatterSound();
+
         isScattering = true;
         if (Random.value < FEAR_STOP_CHANCE)
             isScattering = false;
+    }
+
+    void PlayScatterSound()
+    {
+        if (Random.value <= FEAR_SOUND_CHANCE)
+        {
+            var rand = Random.Range(0, sounds.Length);
+            audio.clip = sounds[rand];
+            audio.Play();
+        }
     }
 
     void LimitY()

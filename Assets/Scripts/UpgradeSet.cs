@@ -27,6 +27,9 @@ public class UpgradeSet : MonoBehaviour
     [SerializeField]
     MeshFilter filter;
 
+    [SerializeField]
+    AudioClip upgradeSound;
+
     float nextBaubleAngle = 0f;
     float baubleAngleIncrement = 360f / 8f;
 
@@ -113,6 +116,7 @@ public class UpgradeSet : MonoBehaviour
         isChoosing = true;
         DisplayText();
         SwapMesh();
+        PlayLevelSound();
 
         creature.IncreaseDefaultZoom();
     }
@@ -129,6 +133,12 @@ public class UpgradeSet : MonoBehaviour
         var level = pointTotal / POINTS_TO_LEVEL;
         if (level < upgradeMeshes.Length)
             filter.mesh = upgradeMeshes[level];
+    }
+
+    void PlayLevelSound()
+    {
+        audio.clip = upgradeSound;
+        audio.Play();
     }
 
     void EndLevelUp()

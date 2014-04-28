@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
+  - 82: {fileID: 8200000}
   m_Layer: 8
   m_Name: Creature
   m_TagString: Untagged
@@ -202,6 +203,64 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .50000006
   m_Center: {x: 5.96046448e-08, y: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: .100000001
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -252,6 +311,7 @@ MonoBehaviour:
   creatureLight: {fileID: 10800000}
   teleportText: {fileID: 0}
   sonarText: {fileID: 0}
+  teleportSound: {fileID: 8300000, guid: e3557c7b5dfd32546bdef6ca678c0604, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +339,7 @@ MonoBehaviour:
   - {fileID: 4300000, guid: 6736ca561b92c8749ab440c11fd7726f, type: 3}
   - {fileID: 4300000, guid: 503aa7a5525090046aa1b8f68e522f59, type: 3}
   filter: {fileID: 3300000}
+  upgradeSound: {fileID: 8300000, guid: cbad0b04233065641906116a4b2586c3, type: 3}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonarShader: {fileID: 4800000, guid: cbe1d04ab24117248848df72ebe2f4a4, type: 3}
   sonarRing: {fileID: 400006}
+  sonarSound: {fileID: 8300000, guid: 6e4212f4eeb180a409edc50180228e90, type: 3}
   control: {fileID: 11400000}
 --- !u!114 &11400008
 MonoBehaviour:
