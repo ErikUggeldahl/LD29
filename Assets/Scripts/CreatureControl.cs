@@ -12,6 +12,11 @@ public class CreatureControl : MonoBehaviour
     [SerializeField]
     Light creatureLight;
 
+    [SerializeField]
+    TextMesh teleportText;
+    [SerializeField]
+    TextMesh sonarText;
+
     Camera mainCam;
     CameraControl cameraControl;
 
@@ -104,6 +109,11 @@ public class CreatureControl : MonoBehaviour
         }
     }
 
+    public void IncreaseDefaultZoom()
+    {
+        cameraControl.IncreaseDefaultZoom();
+    }
+
     public void IncreaseSightRadius()
     {
         cameraControl.IncreaseZoom();
@@ -123,10 +133,16 @@ public class CreatureControl : MonoBehaviour
     public void EnableTeleport()
     {
         canTeleport = true;
+
+        teleportText.gameObject.SetActive(true);
+        teleportText.transform.position = transform.position;
     }
 
     public void EnableSonar()
     {
         canSonar = true;
+
+        sonarText.gameObject.SetActive(true);
+        sonarText.transform.position = transform.position;
     }
 }

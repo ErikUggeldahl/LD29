@@ -22,10 +22,16 @@ public class UpgradeSet : MonoBehaviour
     [SerializeField]
     TextMesh moveUpText;
 
+    [SerializeField]
+    Mesh[] upgradeMeshes;
+    [SerializeField]
+    MeshFilter filter;
+
     float nextBaubleAngle = 0f;
     float baubleAngleIncrement = 360f / 8f;
 
     int pointTotal = 0;
+    int maxUpgrades;
 
     Transform[] baubles = new Transform[BAUBLE_COUNT];
     int baubleCount = 0;
@@ -72,6 +78,8 @@ public class UpgradeSet : MonoBehaviour
         moveUpgrades = new Queue<Upgrade>();
         moveUpgrades.Enqueue(new Upgrade("Increase Speed", creature.IncreaseMoveSpeed));
         moveUpgrades.Enqueue(new Upgrade("Enable Teleport", creature.EnableTeleport));
+
+        maxUpgrades = sightUpgrades.Count + moveUpgrades.Count;
     }
 	
     void AddBaubles()
@@ -92,7 +100,7 @@ public class UpgradeSet : MonoBehaviour
     public void AddPoints(int points)
     {
         pointTotal += points;
-        if (pointTotal % POINTS_TO_LEVEL == 0)
+        if (pointTotal % POINTS_TO_LEVEL == 0 && pointTotal / POINTS_TO_LEVEL <= maxUpgrades)
             LevelUp();
 
         baubleCount += points;
@@ -104,6 +112,9 @@ public class UpgradeSet : MonoBehaviour
     {
         isChoosing = true;
         DisplayText();
+        SwapMesh();
+
+        creature.IncreaseDefaultZoom();
     }
 
     void DisplayText()
@@ -111,6 +122,13 @@ public class UpgradeSet : MonoBehaviour
         levelUpText.SetActive(true);
         sightUpText.text = sightUpgrades.Count > 0 ? sightUpgrades.Peek().Name : string.Empty;
         moveUpText.text = moveUpgrades.Count > 0 ? moveUpgrades.Peek().Name : string.Empty;
+    }
+
+    void SwapMesh()
+    {
+        var level = pointTotal / POINTS_TO_LEVEL;
+        if (level < upgradeMeshes.Length)
+            filter.mesh = upgradeMeshes[level];
     }
 
     void EndLevelUp()

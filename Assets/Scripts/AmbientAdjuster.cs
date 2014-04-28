@@ -14,7 +14,6 @@ public class AmbientAdjuster : MonoBehaviour
     float yMin;
 
     float range;
-    public float t;
 
     void Start()
     {
@@ -23,7 +22,7 @@ public class AmbientAdjuster : MonoBehaviour
 
     void Update()
     {
-        t = (transform.position.y - yMin) / range;
+        float t = (transform.position.y - yMin) / range;
         Color ambient = Color.Lerp(zeroAmbient, fullAmbient, t);
         RenderSettings.ambientLight = ambient;
     }

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour
 {
+    const float ZOOM_INC = 5f;
+    const float DEFAULT_ZOOM_INC = 0.5f;
+
     [SerializeField]
     Transform toFollow;
 
@@ -47,12 +50,18 @@ public class CameraControl : MonoBehaviour
     public void IncreaseZoom()
     {
         StopAllCoroutines();
-        StartCoroutine(ZoomOut());
+        StartCoroutine(ZoomOut(ZOOM_INC));
     }
 
-    IEnumerator ZoomOut()
+    public void IncreaseDefaultZoom()
     {
-        newZoom += 5f;
+        StopAllCoroutines();
+        StartCoroutine(ZoomOut(DEFAULT_ZOOM_INC));
+    }
+
+    IEnumerator ZoomOut(float increase)
+    {
+        newZoom += increase;
 
         while (camera.orthographicSize < newZoom)
         {
