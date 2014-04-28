@@ -55,7 +55,7 @@ public class Snake : MonoBehaviour
     
     void Attack(float dist)
     {
-        if (attacking = false)
+        if (!attacking)
         {
             audio.clip = wanderSound;
             audio.Play();
